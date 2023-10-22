@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   const formulario = document.getElementById('formulario_2');
-  const iniciarSesionBtn = document.getElementById('iniciarSesionBtn');
 
   formulario.addEventListener('submit', function (event) {
     event.preventDefault(); // Evitar que el formulario se envíe
@@ -17,18 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json())
       .then(data => {
 
-          const usuario = data.find(profesor => (profesor.email === emailUsuario || profesor.username === emailUsuario) && profesor.password === contrasena);
-          
-          if (usuario) {
-              // Las credenciales son válidas, puedes redirigir al usuario a la página de inicio
-              const materia = usuario.siglas;
-              console.log (materia);
-              localStorage.setItem ('materia', materia);
-              window.location.href = 'index.html';
-          } else {
-              // Las credenciales son inválidas, muestra un mensaje de error
-              alert('Nombre de usuario o contraseña incorrectos');
-          }
+        //Validación de credenciales.
+        const usuario = data.find(profesor => (profesor.email === emailUsuario || profesor.username === emailUsuario) && profesor.password === contrasena);
+        
+        if (usuario) {
+            //Extraer las siglas de materia del profesor.
+            const materia = usuario.siglas;
+            localStorage.setItem ('materia', materia);
+            // Las credenciales son válidas, puedes redirigir al usuario a la página de inicio
+            window.location.href = 'index.html';
+        } else {
+            // Las credenciales son inválidas, muestra un mensaje de error
+            alert('Nombre de usuario o contraseña incorrectos');
+        }
       })
       .catch(error => {
         console.error('Error al recuperar datos:', error);

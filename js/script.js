@@ -7,10 +7,11 @@
 
 function openQRModal() {   
     
+    // Extraer siglas de asignatura
     const codigo = localStorage.getItem('materia');
 
-    const url = `http://localhost:3000/asistencia/${codigo}`; // Usando comillas inversas para interpolar la variable
-    console.log(codigo);
+    //URL personalizada;
+    const url = `http://localhost:3000/asistencia/${codigo}`; 
    
     const modal = document.getElementById("qrModal");
     modal.style.display = "block";
@@ -19,9 +20,13 @@ function openQRModal() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
+            //Extraer materia + asistencia 
             const materia = data.materia;
             const asistencia = data.clases;
+            // Concatenar datos
             const dataMateria = { materia, asistencia };
+
+            //Mostraer el QR con los datos
             const qr = new QRious({
                 element: document.getElementById("qr-canvas"),
                 value: JSON.stringify(dataMateria)
@@ -54,7 +59,6 @@ window.addEventListener("click", (event) => {
         modal.style.display = "none";
     }
 });
-
 
 function cerrarSesionBtn(){
     localStorage.clear();
