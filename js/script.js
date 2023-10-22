@@ -4,24 +4,35 @@
 // }
 // Función para mostrar el modal
 // Función para mostrar el modal
-function openQRModal() {
+
+function openQRModal() {   
+    
+    const codigo = localStorage.getItem('materia');
+
+    const url = `http://localhost:3000/asistencia/${codigo}`; // Usando comillas inversas para interpolar la variable
+    console.log(codigo);
+   
     const modal = document.getElementById("qrModal");
     modal.style.display = "block";
 
-    fetch('http://localhost:3000/asistencia/ASY4131')
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            const asistencia = data.clases; // Debes asignar "data.clases" a una variable, no "data1"
+            const materia = data.materia;
+            const asistencia = data.clases;
+            const dataMateria = { materia, asistencia };
             const qr = new QRious({
                 element: document.getElementById("qr-canvas"),
-                value: JSON.stringify(asistencia) // Utiliza la variable "asistencia" en lugar de "data1"
+                value: JSON.stringify(dataMateria)
             });
         })
         .catch(error => {
             console.error('Error al recuperar datos:', error);
         });
 }
+
+
 
 // Resto del código (asociar eventos y cerrar modal) sigue igual
 
@@ -43,3 +54,9 @@ window.addEventListener("click", (event) => {
         modal.style.display = "none";
     }
 });
+
+
+function cerrarSesionBtn(){
+    localStorage.clear();
+    window.location.href = 'login.html';
+  }
