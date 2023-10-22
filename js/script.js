@@ -3,31 +3,28 @@
 //     window.location.href = "generar-codigo-qr.html";
 // }
 // Función para mostrar el modal
+// Función para mostrar el modal
 function openQRModal() {
     const modal = document.getElementById("qrModal");
     modal.style.display = "block";
-    
-    const data = {
-        id: "ASY4131",
-        materia: "Arquitectura",
-        clases: [
-          { fecha: "2023-09-01", presente: true },
-          { fecha: "2023-09-02", presente: true },
-          { fecha: "2023-09-03", presente: true },
-          { fecha: "2023-09-04", presente: true },
-          { fecha: "2023-09-05", presente: true },
-          { fecha: "2023-09-05", presente: false }
-        ],
-        profesor: "María",
-        correo: "maria.rodri@profesorduocuc.cl"
-      };
-      
-      const qr = new QRious({
-        element: document.getElementById("qr-canvas"),
-        value: JSON.stringify(data) // Convierte el objeto JSON a una cadena y úsala como valor del código QR
-      });
-      
+
+    fetch('http://localhost:3000/asistencia/ASY4131')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            const asistencia = data.clases; // Debes asignar "data.clases" a una variable, no "data1"
+            const qr = new QRious({
+                element: document.getElementById("qr-canvas"),
+                value: JSON.stringify(asistencia) // Utiliza la variable "asistencia" en lugar de "data1"
+            });
+        })
+        .catch(error => {
+            console.error('Error al recuperar datos:', error);
+        });
 }
+
+// Resto del código (asociar eventos y cerrar modal) sigue igual
+
 
 // Función para cerrar el modal
 function closeQRModal() {
