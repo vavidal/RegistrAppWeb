@@ -22,7 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (usuario) {
             //Extraer las siglas de materia del profesor.
             const materia = usuario.siglas;
+            const email = usuario.email;
+            const nombre = usuario.username;
+            const carrera = usuario.carrera;
+
             localStorage.setItem ('materia', materia);
+            localStorage.setItem ('email', email);
+            localStorage.setItem ('nombre', nombre);
+            localStorage.setItem ('carrera', carrera);
             // Las credenciales son válidas, puedes redirigir al usuario a la página de inicio
             window.location.href = 'index.html';
         } else {

@@ -5,6 +5,14 @@
 // Función para mostrar el modal
 // Función para mostrar el modal
 
+var nombre = localStorage.getItem('nombre');
+var carrera = localStorage.getItem('carrera');
+var email = localStorage.getItem('email');
+
+document.getElementById("nombreProfesor").textContent = nombre;
+document.getElementById("nombreCarrera").textContent = carrera;
+document.getElementById("emailProfesor").textContent = email;
+
 function openQRModal() {   
     
     // Extraer siglas de asignatura
@@ -35,6 +43,7 @@ function openQRModal() {
         .catch(error => {
             console.error('Error al recuperar datos:', error);
         });
+
 }
 
 
