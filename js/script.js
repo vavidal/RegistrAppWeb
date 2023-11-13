@@ -71,5 +71,10 @@ window.addEventListener("click", (event) => {
 
 function cerrarSesionBtn(){
     localStorage.clear();
+    alert("Sesión cerrada");
     window.location.href = 'login.html';
   }
+
+function irAInicioSesion() {
+    window.location.href = 'login.html';
+}
