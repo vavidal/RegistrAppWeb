@@ -10,7 +10,12 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(150deg,darkblue, orange,yellow);
+    background-image: url(../img/fondoweb.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed ;
+    background-position: 500%;
 }
 #box{
     position: relative;
@@ -26,7 +31,7 @@ body{
     font-size: 36px;
     font-weight: 600;
     text-align: center;
-    border-bottom:solid 2px darkblue;
+    border-bottom:solid 2px #00227e;
     width: 100%;
 }
 
@@ -44,16 +49,29 @@ button[type="button"]{
 }
 button[type="submit"]{
     margin-top: 20px;
-    background-color: blue;
+    background-color: #00227e;
 }
 
 button[type="reset"]{
     background-color: darkgoldenrod;
 }
 button[type="button"]{
-    background-color: darkblue;
+    background-color: #00227e;
 }
 .btn-1{
     text-decoration: none;
     color: white;
 }
+
+/* Estilos para centrar la imagen y ajustar su tamaño */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .centered-image {
+    max-width: 300px; /* Ancho máximo para la imagen */
+    max-height: 300px; /* Altura máxima para la imagen */
+  }
+  
