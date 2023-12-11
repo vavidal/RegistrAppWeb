@@ -13,38 +13,58 @@ document.getElementById("nombreProfesor").textContent = nombre;
 document.getElementById("nombreCarrera").textContent = carrera;
 document.getElementById("emailProfesor").textContent = email;
 
-function openQRModal() {   
-    
+function openQRModal() {
     // Extraer siglas de asignatura
     const codigo = localStorage.getItem('materia');
 
-    //URL personalizada;
-    const url = `http://localhost:3000/asistencia/${codigo}`; 
-   
+    // URL personalizada
+    const url = `http://localhost:3000/asistencia/${codigo}`;
+
     const modal = document.getElementById("qrModal");
     modal.style.display = "block";
+
+    // Opciones personalizadas para el QR
+    const qrOptions = {
+        element: document.getElementById("qr-canvas"),
+        value: "" // Inicialmente vacío
+    };
+
+    const qr = new QRious(qrOptions);
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            //Extraer materia + asistencia 
+            // Extraer materia + asistencia 
             const materia = data.materia;
             const asistencia = data.clases;
-            // Concatenar datos
-            const dataMateria = { materia, asistencia };
 
-            //Mostraer el QR con los datos
-            const qr = new QRious({
-                element: document.getElementById("qr-canvas"),
-                value: JSON.stringify(dataMateria)
+            // Crear una lista de strings representando la asistencia con indicadores de presente/ausente
+            const asistenciaStrings = asistencia.map(clase => {
+                const estado = clase.presente ? 'Presente' : 'Ausente';
+                return `|${clase.fecha}/${estado} `;
             });
+
+
+            const dataMateria = `${materia}`;
+            const dataAsistencia = asistenciaStrings.join('');
+            const datosQR = `Materia: ${dataMateria} Asistencia:${dataAsistencia}`;
+
+            // Concatenar datos
+
+
+            // Actualizar el valor del QR
+            qr.set({
+                value: datosQR
+            });
+
         })
         .catch(error => {
             console.error('Error al recuperar datos:', error);
         });
-
 }
+
+
+
 
 
 
