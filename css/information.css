@@ -1,0 +1,119 @@
+body {
+    background-image: url(../img/fondoweb.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed ;
+    background-position: 500%;
+    font-family: Arial, sans-serif;   
+    text-align: justify;
+    margin: 90px;
+}
+
+.titulo1{
+    text-align: center;
+    color: #00227e;
+    margin: 50px ;
+}
+
+.subtitulo{
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 1.2;
+    font-family: Arial, sans-serif;
+    font-weight: 300px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.text-block{
+    padding: 20px 20px 40px 20px;
+    box-sizing: border-box;
+
+}
+
+h2{
+    text-align: center;
+    color: #00227e;
+}
+
+.blocks-gallery-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .blocks-gallery-item img {
+    display: block;
+    width: 100%; 
+    height: auto; 
+    margin-bottom: 10px; 
+  }
+
+  .Cerrar_sesion_logo_amarillo {
+    position:absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px; 
+    height: 30px;
+    cursor: pointer;
+}
+
+.logo-container {
+    display: flex;
+    margin-left:auto;
+    
+}
+
+.logo-img {
+    max-width: 200px;
+    height: auto;
+    margin-right: 0px; 
+}
+
+.logo-container-cerrar{
+    display: flexleft;
+    margin-left: auto; 
+}
+
+.logo-img-cerrar{
+    max-width: 50px; 
+    height: auto;
+    margin-left: auto; 
+}
+
+.logo-img{
+    width: 100px;
+    height: auto;
+
+}
+
+
+.navbar-nav .nav-link {
+    color: #00227e; 
+  }
+
+  .navbar-nav .nav-link {
+    color:#00227e
+  }
+    
+  .navbar-nav .nav-link {
+    font-size: 16px; 
+  }
+
+.imagen{
+    margin: 20px;
+}
+
+.profesor {
+    width: 200px; 
+    height: auto; 
+  }
+  
+
+  

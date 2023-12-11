@@ -1,13 +1,46 @@
-.QR{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
+.logo-img{
+    width: 100px;
+    height: auto;
+
 }
-button {
-    padding: 10px 20px;
-    font-size: 20px;
+
+
+.navbar-nav .nav-link {
+    color: #00227e; 
+  }
+
+  .navbar-nav .nav-link {
+    color:#00227e
+  }
     
+  .navbar-nav .nav-link {
+    font-size: 16px; 
+  }
+
+.titulo{
+  text-align: center;
+  color: #00227e;
+  margin: 20px ;
+}
+
+.parrafo{
+  text-align: center;
+}
+
+.profile {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
 }
 
 body {
@@ -17,150 +50,120 @@ body {
     background-size: cover;
     background-attachment:fixed ;
     background-position: 500%;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;   
     text-align: center;
 }
 
-header {
-    background-color: #00227e;
-    color: #fff;
-    padding: 20px;
-}
-
-.container-fluid{
-    background-color: #00227e;
-}
-
-.logo-container {
-    display: flex;
-    /* Alinea verticalmente los elementos en el contenedor */
-}
-
-.logo-img {
-    max-width: 200px; /* Ajusta el tamaño máximo de la imagen según tus necesidades */
-    height: auto;
-    margin-right: 0px; /* Ajusta el margen entre la imagen y el título según tus necesidades */
-}
-
-.logo-container-cerrar{
-    display: flex;
-    margin-left: auto; 
-     /* Alinea verticalmente los elementos en el contenedor */
-}
-
-.logo-img-cerrar{
-    max-width: 50px; /* Ajusta el tamaño máximo de la imagen según tus necesidades */
-    height: auto;
-    margin-left: auto; /* Mueve la imagen hacia la derecha */
-}
-
-
-
-h1 {
-    margin: 0;
-}
-
-.profile {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos del modal */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60%;
-    text-align: center;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  text-align: center;
 }
 
 .close {
-    color: #ffd700;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #ffd700;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 #qrcode {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
 }
 
 #qr-canvas {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+button[type="submit"]{
+  text-align: center;
+  padding: 12px;
+  background-color: #00227e;
+  color: #ffd700 ;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2em;
+  letter-spacing: 0.03em;
+  margin-bottom: 400px;
+  display:flex ;
 }
 
 .Cerrar_sesion_logo_amarillo {
-    position: absolute;
+    position:absolute;
     top: 10px;
     right: 10px;
-    width: 10px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    width: 10px; 
     height: 30px;
     cursor: pointer;
 }
 
+.logo-container {
+    display: flex;
+    margin-left:auto;
+    
+}
 
-button[type="submit"]{
-    text-align: center;
-    padding: 12px;
-    background-color: #00227e;
-    color: #ffd700 ;
-    border: none;
-    border-radius: 20px;
-    font-size: 1.2em;
-    letter-spacing: 0.03em;
-    margin-bottom: 25px;
+.logo-img {
+    max-width: 200px;
+    height: auto;
+    margin-right: 0px; 
+}
+
+.logo-container-cerrar{
+    display: flexleft;
+    margin-left: auto; 
+}
+
+.logo-img-cerrar{
+    max-width: 50px; 
+    height: auto;
+    margin-left: auto; 
+}
+
+.QR{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+button {
+  padding: 10px 20px;
+  font-size: 20px;
+  
 }
 
 
 @media only screen and (max-width: 600px) {
-    /* Estilos específicos para pantallas más pequeñas (ejemplo: ancho máximo de 600px) */
-    .QR {
-        height: auto; /* Ajusta según tus necesidades */
-    }
+  .QR {
+      height: auto; 
+  }
 
-    button[type="submit"] {
-        width: 150%; /* O cualquier otro estilo que desees cambiar para pantallas más pequeñas */
-    }
+  button[type="submit"] {
+      width: 150%; 
+  }
 }
-
-@media only screen and (max-width: 768px) {
-    /* Otros estilos para pantallas de tamaño medio (ejemplo: ancho máximo de 768px) */
-    .container-fluid {
-        background-color: #00227e;
-        padding: 10px;
-    }
-}
-
-
-
-
-
