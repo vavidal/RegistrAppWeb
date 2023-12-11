@@ -9,10 +9,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://cdn.rawgit.com/neocotic/qrious/master/dist/qrious.min.js"></script>
 </head>
-<body>
-   
-    
-   
+<body>  
 </body>
 </html>
 
@@ -22,28 +19,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil del Profesor</title>
+    <title >Perfil del Profesor</title>
     <style>
 
     </style>
 </head>
 <body>
     <header>
+        <div class="logo-container" onclick="irAInicioSesion()">
+            <img src="../img/RegistrAPP_logo.png" alt="Logo RegistrApp" class="logo-img">
+            <div class="logo-container-cerrar" onclick="cerrarSesionBtn()">
+                <img src="../img/Cerrar_sesion_logo_amarillo.png" alt="Cerrar Sesión" class="logo-img-cerrar">
+            </div>
+        </div>
+
+
         <h1>Perfil del Profesor</h1>
     </header>
 
     <div class="profile">
-        <img src="../img/icon.jpg" alt="Foto del Profesor">
+        <img src="../img/perfil_user.png" alt="Foto del Profesor">
         <h2><span id="nombreProfesor"></span></h2>
         <p>Asignatura: <span id="nombreCarrera"></span></p>
         <p>Email: <span id="emailProfesor"></span></p>
     </div>
-     <!-- Contenido de tu página -->
+     <!-- Contenido de la página -->
      <div class="container"> 
-        <button type="button" class="btnVolver" onclick="cerrarSesionBtn()">Cerrar Sesión</button>
-        <!-- <button id="agregarClaseButton">Agregar Nueva Clase</button> -->
         <div class="QR">
-            <button id="showQRButton">Mostrar Código QR</button>
+            <i class="fa-solid fa-qrcode"></i>
+            <button type="submit" id="showQRButton" class="btnQr">Mostrar Código QR</button>
             <div id="qrModal" class="modal">
                 <div class="modal-content">
                     <span class="close" id="closeQR">&times;</span>
